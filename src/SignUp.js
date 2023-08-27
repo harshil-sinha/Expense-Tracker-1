@@ -1,54 +1,35 @@
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
-import Container from 'react-bootstrap/Container';
-
+import React from 'react'
+import "./index.css";
+import {
+    MDBContainer,
+    MDBCol,
+    MDBRow,
+    MDBBtn,
+    MDBIcon,
+    MDBInput,
+  } from 'mdb-react-ui-kit';
 
 const SignUp = () =>{
     return (
         <>
-            <Container>
-            <Row>
-                <Col className='mt-4'>
-                <Form>
-            <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
-                <Form.Label column sm={2}>
-                Email
-                </Form.Label>
-                <Col sm={10}>
-                <Form.Control type="email" placeholder="Email" required/>
-                </Col>
-            </Form.Group>
+         <MDBContainer fluid className="p-3 my-5">
+            <MDBRow>
+            <MDBCol col='10' md='6'>
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid" alt="Phone image" />
+            </MDBCol>
 
-            <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
-                <Form.Label column sm={2}>
-                Password
-                </Form.Label>
-                <Col sm={10}>
-                <Form.Control type="password" placeholder="Password" required/>
-                </Col>
-            </Form.Group>
+            <MDBCol col='4' md='6'>
+            <h1 className='mb-3'>Sign Up</h1>
+            <MDBInput wrapperClass='mb-4' label='Email address' id='formControlLg' type='email' size="lg"/>
+            <MDBInput wrapperClass='mb-4' label='Password' id='formControlLg' type='password' size="lg"/>
+            <div className="d-flex justify-content-between mx-4 mb-4">
+            </div>
 
-            <Form.Group as={Row} className="mb-3" controlId="formHorizontalPassword">
-                <Form.Label column sm={2}>
-                Confirm Password
-                </Form.Label>
-                <Col sm={10}>
-                <Form.Control type="password" placeholder="Confirm Password" required/>
-                </Col>
-            </Form.Group>
+            <MDBBtn className="mb-4 w-100" size="lg">Sign Up</MDBBtn>
+        </MDBCol>
+        </MDBRow>
+        </MDBContainer>
             
-            <Form.Group as={Row} className="mb-3">
-                <Col sm={{ span: 10, offset: 2 }}>
-                <Button type="submit">Sign Up</Button>
-                </Col>
-            </Form.Group>
-            </Form>
-                </Col>
-            </Row>
-            </Container>
-     
         </>
     )
 }
