@@ -19,7 +19,7 @@ const SignUp = () =>{
             </MDBCol>
 
             <MDBCol col='4' md='6'>
-            <h1 className='mb-3'>Sign Up</h1>
+            <h1 className='mb-3 text-center'>Sign Up</h1>
             <MDBInput wrapperClass='mb-4' label='Email address' id='formControlLg' type='email' size="lg"/>
             <MDBInput wrapperClass='mb-4' label='Password' id='formControlLg' type='password' size="lg"/>
             <div className="d-flex justify-content-between mx-4 mb-4">
