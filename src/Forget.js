@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./SignUp.css";
 import {database} from './firebase.js';
 import {sendPasswordResetEmail} from "firebase/auth";
@@ -9,17 +9,24 @@ import {
     MDBBtn,
     MDBInput,
   } from 'mdb-react-ui-kit';
-import { NavLink} from 'react-router-dom';
+import { NavLink,useNavigate} from 'react-router-dom';
 
 const Forget = () =>{
-    // const history = useNavigate()
+    const history = useNavigate()
+    const [name,setName] = useState("");
+    const [icn,setIcn] = useState("");
 
     const handleSubmit = (event) =>{
         event.preventDefault();
         const email = event.target.email.value;
         
         sendPasswordResetEmail(database,email).then(()=>{
-           alert("Password sent successfully")
+           setName("Password Sent Successfully On Your Email" );
+           setIcn(" ✔ ")
+
+        //    setTimeout(() => {
+        //       history("/login")
+        //    }, 4000);
            
         }).catch((err)=>{
             alert(err.code);
@@ -38,7 +45,8 @@ const Forget = () =>{
                 handleSubmit(event)
             }}>
             <h3 className='mb-3'>Enter Your Email</h3>
-            <MDBInput wrapperClass='mb-4' name='email' id='formControlLg' type='email' size="lg" placeholder='Email Id'/>
+            <span className='text-start text-success'>{name}{icn}</span>
+            <MDBInput wrapperClass='mb-4' name='email' id='formControlLg' type='email' size="lg" placeholder='Email Id'/><br />
             
             <MDBBtn className="mb-4" size="lg" >Reset Password </MDBBtn>
             </form>
