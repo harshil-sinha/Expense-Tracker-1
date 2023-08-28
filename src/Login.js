@@ -9,7 +9,7 @@ import {
     MDBBtn,
     MDBInput,
   } from 'mdb-react-ui-kit';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const Login = () =>{
     const history = useNavigate()
@@ -42,7 +42,9 @@ const Login = () =>{
             <h1 className='mb-3'>Login</h1>
             <MDBInput wrapperClass='mb-4' name='email' id='formControlLg' type='email' size="lg" placeholder='Email Id'/>
             <MDBInput wrapperClass='mb-4' name="pass" id='formControlLg' type='password' size="lg" placeholder='Password'/>
-
+            <MDBCol  className='mb-4'>
+             <NavLink to="/forget">Forgot Password?</NavLink>
+            </MDBCol>
             <MDBBtn className="mb-4" size="lg" >Login</MDBBtn>
             </form>
         </MDBCol>
