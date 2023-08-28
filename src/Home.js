@@ -3,7 +3,7 @@ import React from 'react';
 import { signOut } from 'firebase/auth';
 import { database } from './firebase';
 import { useNavigate } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 const Home = () =>{
     const history = useNavigate();
 
@@ -24,14 +24,14 @@ const Home = () =>{
          </MDBCol>
          </MDBRow>
          </MDBContainer>
-        <MDBContainer fluid className="my-2" breakpoint="md">
+        <MDBContainer fluid className="my-2">
             <MDBRow>
-            <MDBCol md='6' sm='8' size='6' lg='9'>
-            <span>Welcome to Expense Tracker</span>
+            <MDBCol>
+            <h3 className='text-center'>Welcome to Expense Tracker</h3>
             </MDBCol>
-            <MDBCol md='6' justify-content-end sm='4' size='6' lg='3'>
-            <span>Your profile is incomplete <NavLink to="/login" style={{textDecoration:"none"}}>complete now</NavLink></span>
-            </MDBCol>
+            {/* <MDBCol md='6' justify-content-end sm='4' size='6' lg='3'>
+            <span>Your profile is incomplete <NavLink to="/form" style={{textDecoration:"none"}}>complete now</NavLink></span>
+            </MDBCol> */}
             </MDBRow>
             </MDBContainer>
         </>
