@@ -9,12 +9,16 @@ const BalanceText = styled(Typography)`
 `
 
 const Balance = ({transaction}) =>{
-    const amount = transaction.map(transaction => transaction.amount);
-    const total = amount.reduce((amount,item) => (amount+=item),0).toFixed(2);
+    // const amount = transaction.map(transaction => transaction.amount);
+    // const total = amount.reduce((amount,item) => (amount+=item),0).toFixed(2);
+    let amount = 0;
+    transaction.map((payload)=>{
+        payload.type==="Expense"? amount=amount-payload.amount: amount=amount+payload.amount
+    })
     return (
         <>
             <Box>
-                <BalanceText>Balance ₹{total}</BalanceText>
+                <BalanceText>Balance ₹{amount}</BalanceText>
             </Box>
             
         </>
