@@ -24,7 +24,7 @@ const Login = () =>{
             alert("Login Successfully")
             history('/home');
         }).catch((err)=>{
-            alert(err.code);
+            alert(err.message);
         })
         
     }
@@ -43,7 +43,10 @@ const Login = () =>{
             <MDBInput wrapperClass='mb-4' name='email' id='formControlLg' type='email' size="lg" placeholder='Email Id'/>
             <MDBInput wrapperClass='mb-4' name="pass" id='formControlLg' type='password' size="lg" placeholder='Password'/>
             <MDBCol  className='mb-4'>
-             <NavLink to="/forget">Forgot Password?</NavLink>
+             <NavLink to="/forget">Forgot Password?</NavLink><br />
+            </MDBCol>
+            <MDBCol  className="mb-3">
+             <span>Not Register?</span> <NavLink to="/signup">Create an account?</NavLink>
             </MDBCol>
             <MDBBtn className="mb-4" size="lg" >Login</MDBBtn>
             </form>
