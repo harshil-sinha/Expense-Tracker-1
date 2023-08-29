@@ -17,6 +17,7 @@ const TransactionData = ({ data, setTransaction, transaction }) => {
     return (
         <>
             <Detail style={{ background: clr, color: "#fff" }}>
+                <ListItemText>{data.type}</ListItemText>
                 <ListItemText>{data.text}</ListItemText>
                 <ListItemText>{data.amount}</ListItemText>
                 <ListItemIcon>
