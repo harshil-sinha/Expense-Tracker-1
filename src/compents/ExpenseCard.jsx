@@ -9,9 +9,14 @@ const Container = styled(Box)`
     }
 `
 const ExpenseCard = ({transaction}) =>{
-    const amount = transaction.map(transaction => transaction.amount);
-    const income = amount.filter(item => item>0).reduce((acc,item) => (acc+=item),0).toFixed(2);
-    const expense = (amount.filter(item => item<0).reduce((acc,item) => (acc+=item),0)*-1).toFixed(2);
+    // const amount = transaction.map(transaction => transaction.amount);
+    // const income = amount.filter(item => item>0).reduce((acc,item) => (acc+=item),0).toFixed(2);
+    // const expense = (amount.filter(item => item<0).reduce((acc,item) => (acc+=item),0)*-1).toFixed(2);
+    let income = 0;
+    let expense = 0;
+    transaction.map((payload)=>{
+        payload.type==="Expense"? expense-=payload.amount: income+=payload.amount
+    })
 
     return (
         <>
